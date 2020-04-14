@@ -2,12 +2,18 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import Inicio from './components/Inicio'
-import Usuario from './components/usuario/Usuario'
+// import Usuario from './components/usuario/Usuario'
 import UsuarioDetalhe from  './components/usuario/UsuarioDetalhe'
-import UsuarioLista from  './components/usuario/UsuarioLista'
-import UsuarioEditar from  './components/usuario/UsuarioEditar'
+// import UsuarioLista from  './components/usuario/UsuarioLista'
+// import UsuarioEditar from  './components/usuario/UsuarioEditar'
 import Menu from './components/template/Menu'
 import MenuAlt from './components/template/MenuAlt'
+
+// Buscando componente de maneira tardia
+const UsuarioEditar = () => import('./components/usuario/UsuarioEditar')
+
+const UsuarioLista = () => import( /* webpackChunkName: "usuario" */'./components/usuario/UsuarioLista')
+const Usuario = () => import(/* webpackChunkName: "usuario" */'./components/usuario/Usuario')
 
 Vue.use(Router)
 
